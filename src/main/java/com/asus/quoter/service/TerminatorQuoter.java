@@ -18,7 +18,7 @@ public class TerminatorQuoter implements Quoter {
     @InjectRandomInt(min = 2, max = 7)
     private int repeat;
 
-
+    @Value("Where is John Connor?")
     private String message;
 
     public TerminatorQuoter() {
