@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <bean class="com.asus.quoter.annotation.ProfilingHandlerBeanPostProcessor"/>
+    <bean class="com.asus.quoter.annotation.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <!--because context:annotation-config-->
+    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+    <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
+    <bean class="com.asus.quoter.annotation.PostProxyConstructInvokerContextListener"/>
+    <bean class="com.asus.quoter.annotation.DeprecationHandlerBeanFactoryPostProcessor" />
+
+    <!--<context:annotation-config></context:annotation-config>-->
+    <!--or-->
+    <context:component-scan base-package="com.asus.quoter"/>
+
+    <bean class="com.asus.quoter.service.TerminatorQuoter" id = "terminatorQuoter">
+        <property name="message" value="I'll be back!"/>
+    </bean>
+</beans>
