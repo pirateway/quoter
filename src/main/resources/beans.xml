@@ -10,15 +10,17 @@
 
     <bean class="com.asus.quoter.annotation.ProfilingHandlerBeanPostProcessor"/>
     <bean class="com.asus.quoter.annotation.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <!--because context:annotation-config-->
-    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
-    <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
     <bean class="com.asus.quoter.annotation.PostProxyConstructInvokerContextListener"/>
     <bean class="com.asus.quoter.annotation.DeprecationHandlerBeanFactoryPostProcessor" />
 
+    <!--or-->
     <!--<context:annotation-config></context:annotation-config>-->
     <!--or-->
-    <context:component-scan base-package="com.asus.quoter"/>
+    <!--<context:component-scan base-package="com.asus.quoter"/>-->
 
     <bean class="com.asus.quoter.service.TerminatorQuoter" id = "terminatorQuoter">
         <property name="message" value="I'll be back!"/>
